@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redeem Coupons - WasteWise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo.jpg" alt="WasteWise Logo" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="store.html">STORE</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="redeem.html">REDEEM</a></li> <!-- Link to the redeem page -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Redeem Section in Top Panel -->
+    <div class="top-panel">
+        <h2>Available Coupons</h2>
+        <div class="coupons-container">
+            <div class="coupon-card">
+                <img src="WhatsApp Image 2024-08-26 at 09.17.35 (1).jpeg" alt="Coupon 1 Logo" class="coupon-image">
+                <h3>30% Off</h3>
+                <p id="coupon-code-1">Use code: WASTE10</p>
+                <button class="redeem-button" onclick="redeemCoupon('WASTE10')">Redeem</button>
+            </div>
+            <div class="coupon-card">
+                <img src="WhatsApp Image 2024-08-26 at 09.17.35 (2).jpeg" alt="Coupon 2 Logo" class="coupon-image">
+                <h3>40% Off</h3>
+                <p id="coupon-code-2">Use code: DIAG15</p>
+                <button class="redeem-button" onclick="redeemCoupon('DIAG15')">Redeem</button>
+            </div>
+            <div class="coupon-card">
+                <img src="WhatsApp Image 2024-08-26 at 09.17.35.jpeg" alt="Coupon 3 Logo" class="coupon-image">
+                <h3>50% Off</h3>
+                <p id="coupon-code-3">Use code: FREEPICKUP</p>
+                <button class="redeem-button" onclick="redeemCoupon('FREEPICKUP')">Redeem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message displayed at the bottom -->
+    <div id="message">
+        Coupon code copied to clipboard!
+    </div>
+
+    <!-- JavaScript for redirecting and copying to clipboard -->
+    <script>
+    function redeemCoupon(couponCode) {
+        // Copy coupon code to clipboard
+        navigator.clipboard.writeText(couponCode).then(() => {
+            // Show the message at the bottom
+            const message = document.getElementById('message');
+            message.style.display = 'block';
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000); // Hide the message after 3 seconds
+
+            // Delay the redirect to the shop page by 2 seconds
+            setTimeout(() => {
+                window.location.href = 'store.html'; // Update this URL to your shop page
+            }, 2000); // 2-second delay before redirecting
+        });
+    }
+</script>
+
+
+</body>
+</html>
